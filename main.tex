@@ -1,0 +1,34 @@
+ %+ !TeX encoding = UTF-8
+% !TeX spellcheck = fr-FR
+\documentclass[a4paper,french,final]{memoir}
+\input{backend_code/preambule}
+\input{backend_code/bibliographie}
+\input{personalisation}
+\input{figures/figures}
+\begin{document}
+\begin{titlingpage}
+\hypersetup{pageanchor=false}
+\input{backend_code/page_de_garde}
+\end{titlingpage}
+\frontmatter
+\tableofcontents
+\mainmatter
+\chapter{Avant-propos}
+\section{e}
+\section{f}
+\section{g}
+\appendix
+\appendixpage
+\chapter{tr}
+\section{e}
+\section{f}
+\section{g}
+\backmatter
+\nocite{*}
+\printbibliography%
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-engine: luatex
+%%% TeX-master: t
+%%% End:

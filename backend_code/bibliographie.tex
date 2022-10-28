@@ -1,0 +1,16 @@
+\usepackage[backend=biber,style=alphabetic]{biblatex}
+\renewbibmacro*{date}{%
+	\printdate
+	\iffieldundef{origyear}{%
+	}{%
+		\setunit*{\addspace}%
+		\printtext[parens]{\printorigdate}%
+	}%
+}
+\addbibresource{references.bib}
+\renewcommand*{\Rnfont}{\scshape}
+\DefineBibliographyStrings{french}{urlseen={consult\'e~le}}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:

@@ -1,0 +1,141 @@
+\usepackage{shellesc}
+\usepackage[french]{babel}
+\usepackage[autostyle=true,maxlevel=3]{csquotes}
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{mathtools}
+\usepackage[math-style=french,warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+\defaultfontfeatures{Ligatures={TeX},Scale={MatchLowercase}}
+\usepackage[amsmath,thmmarks,hyperref]{ntheorem}
+\usepackage{cancel}
+\usepackage{siunitx}
+\usepackage[most]{tcolorbox}
+\let\ordinal\relax
+\usepackage{fmtcount}
+\usepackage{booktabs}
+\usepackage{nicematrix}
+\usepackage{ragged2e}  % Permet la césure dans les marges
+\usepackage{tikz}
+\usetikzlibrary{calc,trees,positioning,arrows,fit,shapes,calc}
+\usepackage[justification=centering]{caption}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{lualatex-math}
+\usepackage{graphicx}
+% \usepackage{lua-typo}
+%\usepackage[xindy]{imakeidx}
+%\makeindex[options= -M index -C utf8 -L french]
+%\usepackage[totoc]{idxlayout}
+\usepackage{varioref}
+\usepackage{nameref}
+\usepackage[unicode,naturalnames,plainpages=false,pdfencoding=auto,pdfborderstyle={/S/U/W 1}]{hyperref}
+\usepackage[noabbrev,nameinlink]{cleveref} % Names references automatically. Load after hyperref.
+
+\hypersetup{pdfprintscaling=None}
+\AtBeginDocument{\let\savedemptyset\emptyset} % 
+\AtBeginDocument{\let\emptyset\varnothing} % 
+\AtBeginDocument{\let\savedphi\phi} % 
+\AtBeginDocument{\let\phi\varphi} %
+\AtBeginDocument{\let\varphi\savedphi} % 
+\AtBeginDocument{\let\savedleq\leq} % 
+\AtBeginDocument{\let\savedgeq\geq} %
+\AtBeginDocument{\let\leq\leqslant} % 
+\AtBeginDocument{\let\geq\geqslant} %
+\newcommand{\paral}{\mathrel{\!/\mkern-5mu/\!}} % \parallel existe déjà : || vs //
+\makeatletter
+\renewcommand*{\thepart}{\@arabic\c@part}
+\renewcommand*{\thechapter}{\@Roman\c@chapter}
+\NewCommandCopy{\oldthechapter}{\thechapter}
+\newcommand*{\theauthor}{\@author}
+\newcommand*{\thetitle}{\@title}
+\newcommand*{\thedate}{\@date}
+\renewcommand*{\cftchapterpresnum}{\@chapapp~}
+\renewcommand{\xmapsto}[2][]{\mathrel{\mathpalette\xmapsto@{{#1}{#2}}}}
+\renewcommand{\xmapsto}[2][]{\mathrel{\mathpalette\xmapsto@{{#1}{#2}}}}
+\newcommand{\xmapsto@}[2]{\xmapsto@@{#1}#2}
+\newcommand{\xmapsto@@}[3]{%
+  \begingroup
+  \sbox\z@{$\m@th#1\mathop{}\limits_{\;#2\;}^{\;#3\;}$}%
+  \mathop{\Uhextensible width \wd\z@ 0 "27FC}_{#2}^{#3}%
+  \endgroup
+}
+\renewcommand{\xLeftrightarrow}[2][]{\mathrel{\mathpalette\xLeftrightarrow@{{#1}{#2}}}}
+\newcommand{\xLeftrightarrow@}[2]{\xLeftrightarrow@@{#1}#2}
+\newcommand{\xLeftrightarrow@@}[3]{%
+  \begingroup
+  \sbox\z@{$\m@th#1\mathop{}\limits_{\;#2\;}^{\;#3\;}$}%
+  \mathop{\Uhextensible width \wd\z@ 0 "027FA}_{#2}^{#3}% 027FA code for long left right double arrow in unicode-math-table.tex 
+  \endgroup
+}
+\renewcommand{\xrightarrow}[2][]{\mathrel{\mathpalette\xrightarrow@{{#1}{#2}}}}
+\newcommand{\xrightarrow@}[2]{\xrightarrow@@{#1}#2}
+\newcommand{\xrightarrow@@}[3]{%
+  \begingroup
+  \sbox\z@{$\m@th#1\mathop{}\limits_{\;#2\;}^{\;#3\;}$}%
+  \mathop{\Uhextensible width \wd\z@ 0 "027F6}_{#2}^{#3}% 027F6 code for long left right  arrow in unicode-math-table.tex
+  \endgroup
+}
+\AtBeginDocument{%
+  \check@mathfonts
+  \iffontchar\textfont\tw@\string"23AF
+    \renewcommand{\relbar}{\mathrel\harrowextender}%
+  \else
+    \Umathcharnumdef\std@minus\Umathcodenum`-
+  \fi}
+\newcounter{proofpart}
+\newcommand{\proofpart}{\@ifstar{\@proofpart}{\@@proofpart}}
+
+\newcommand{\@proofpart}[1]{%
+  \if\detokenize{#1}\relax\else{
+  \par
+  \addvspace{\medskipamount}%
+  \noindent \itshape%
+  {#1~:\par\nobreak\smallskip}%
+  \normalfont
+  \@afterheading
+}\fi
+}
+
+\newcommand{\@@proofpart}[1]{%
+  \par
+  \addvspace{\medskipamount}%
+  \stepcounter{proofpart}%
+  \noindent Partie \theproofpart~:~\itshape%
+  \if\detokenize{#1}\relax%
+  \else{#1.}\fi%
+  \par\nobreak\smallskip
+  \normalfont
+  \@afterheading
+}
+\AtBeginDocument{% placeins code for [section] adapted for subsection.
+  \expandafter\renewcommand\expandafter\subsection\expandafter
+    {\expandafter\@fb@secFB\subsection}%
+  \newcommand\@fb@secFB{\FloatBarrier
+    \gdef\@fb@afterHHook{\@fb@topbarrier \gdef\@fb@afterHHook{}}}%
+  \g@addto@macro\@afterheading{\@fb@afterHHook}%
+  \gdef\@fb@afterHHook{}%
+}
+\makeatother
+% 2 lignes pour localiser les overfull hbox et vbox dans le log
+\showboxdepth=\maxdimen
+\showboxbreadth=\maxdimen
+\newcounter{PageNumberBeforeMainmatter}
+\let\LaTeXStandardMainmatter\mainmatter%
+\renewcommand{\mainmatter}{%
+\setcounter{PageNumberBeforeMainmatter}{\number\value{page}}%
+\LaTeXStandardMainmatter%
+}%
+\let\LaTeXStandardFrontmatter\frontmatter
+\renewcommand{\frontmatter}{%
+  \LaTeXStandardFrontmatter%
+  \renewcommand*{\thepage}{\scshape\roman{page}}
+  }
+\let\LaTeXStandardAppendixPage\appendixpage
+\renewcommand{\appendixpage}{
+\openany
+\renewcommand*{\cftchapterpresnum}{Annexe~}
+\LaTeXStandardAppendixPage%
+\setcounter{page}{\number\value{PageNumberBeforeMainmatter}+1}
+  \renewcommand*{\thepage}{\scshape\roman{page}}%
+  	\addtocontents{toc}{\protect\renewcommand\protect\cftchapterpresnum{\appendixname~}}
+  }%%
