@@ -2,7 +2,7 @@
 % !TeX spellcheck = fr-FR
 \documentclass[a4paper,french,final]{memoir}
 \input{backend_code/preambule}
-\input{backend_code/bibliographie}
+%\input{backend_code/bibliographie}
 \input{personalisation}
 \input{figures/figures}
 \begin{document}
@@ -12,20 +12,24 @@
 \end{titlingpage}
 \frontmatter
 \tableofcontents
-\mainmatter
 \chapter{Avant-propos}
+\mainmatter
+\let\savedthechapter\thechapter%
+\renewcommand{\thechapter}{premier}
+\chapter{test}
+\let\thechapter\savedthechapter%
 \section{e}
 \section{f}
 \section{g}
-\appendix
+\chapter{}
 \appendixpage
+\appendix
+
 \chapter{tr}
 \section{e}
 \section{f}
 \section{g}
 \backmatter
-\nocite{*}
-\printbibliography%
 \end{document}
 %%% Local Variables:
 %%% mode: latex
