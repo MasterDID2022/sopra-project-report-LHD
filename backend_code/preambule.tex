@@ -117,6 +117,7 @@
   \gdef\@fb@afterHHook{}%
 }
 \makeatother
+\newcommand{\scroman}[1]{\addfontfeature{SmallCapsFeatures={LetterSpace=0}}\textsc{\roman{#1}}}
 % 2 lignes pour localiser les overfull hbox et vbox dans le log
 \showboxdepth=\maxdimen
 \showboxbreadth=\maxdimen
@@ -129,7 +130,7 @@
 \let\LaTeXStandardFrontmatter\frontmatter
 \renewcommand{\frontmatter}{%
   \LaTeXStandardFrontmatter%
-  \renewcommand*{\thepage}{\scshape\roman{page}}
+  \renewcommand*{\thepage}{\texorpdfstring{\scroman{page}}{\roman{page}}}%
   }
 \let\LaTeXStandardAppendixPage\appendixpage
 \renewcommand{\appendixpage}{
@@ -137,6 +138,6 @@
 \renewcommand*{\cftchapterpresnum}{Annexe~}
 \LaTeXStandardAppendixPage%
 \setcounter{page}{\number\value{PageNumberBeforeMainmatter}+1}
-  \renewcommand*{\thepage}{\scshape\roman{page}}%
+    \renewcommand*{\thepage}{\texorpdfstring{\scroman{page}}{\roman{page}}}
   	\addtocontents{toc}{\protect\renewcommand\protect\cftchapterpresnum{\appendixname~}}
   }%%
