@@ -15,8 +15,14 @@
 \chapter{Avant-propos}
 \mainmatter
 \let\savedthechapter\thechapter%
-\renewcommand{\thechapter}{premier}
-\chapter{test}
+\renewcommand{\thechapter}{I}
+\chapter{Axe fonctionnel}
+%src: https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuKfCBialKd0jAKt9JCmhWN7pYbCpq_CG0fvvPPabXrSUNWdbkwSMbsJcvoLc5gLo5IGcPoUcfofuL1Qa5WNa9ERbPUQbLtDnrNB1J5NGrKMLvK9OW2a7jmjJ2ibQJ4akXzIy5A2N0000
+\begin{center}
+\includesvg[width=215pt]{figures/statique.svg}
+\end{center}
+L'axe fonctionnel ce concentre sur les fonctionnalité qu'offre notre logicielle, aussi afin de dégager les dites fonctionnalité il est d'abord essentielle de trouver les acteurs de notre système. ainsi il est donc pour nous naturelle de commencer notre réflexion par le \emph{Diagramme de contexte statique}.\\
+Deux choses sont a notée de ce diagramme, premièrement les cardinalité sont absente car très probablement identique($0..n$). Ensuite les acteurs secondaire sont aussi absent, en effet n'ayant a priori aucune contrainte technique il serait précipité de définir nos choix d'implantation et de subir involontairement une dette technique évitable.
 \let\thechapter\savedthechapter%
 \section{e}
 \section{f}
