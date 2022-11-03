@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="384" preserveAspectRatio="none" style="width:515px;height:384px;background:#fff" width="515">
+    <path d="M266.5 6h115a5.25 5.25 0 0 1 3.5 3.5l7 18.797h112.5a3.5 3.5 0 0 1 3.5 3.5V369.5a3.5 3.5 0 0 1-3.5 3.5h-238a3.5 3.5 0 0 1-3.5-3.5V9.5a3.5 3.5 0 0 1 3.5-3.5" fill="none" style="stroke:#696969;stroke-width:1"/>
+    <path style="stroke:#696969;stroke-width:1" d="M263 28.297h129"/>
+    <text font-family="sans-serif" font-size="14" font-weight="bold" textLength="116" x="267" y="20.995">HyperPlanning</text>
+    <ellipse cx="385.428" cy="63.986" fill="#F1F1F1" rx="100.428" ry="22.486" style="stroke:#181818;stroke-width:.5"/>
+    <text font-family="sans-serif" font-size="14" textLength="165" x="302.928" y="66.832">Consulter tous les  EDT</text>
+    <ellipse cx="385.368" cy="162.174" fill="#F1F1F1" rx="106.368" ry="23.674" style="stroke:#181818;stroke-width:.5"/>
+    <text font-family="sans-serif" font-size="14" textLength="178" x="296.368" y="165.02">Consulter EDT personnel</text>
+    <ellipse cx="385.429" cy="339.786" fill="#F1F1F1" rx="71.929" ry="16.786" style="stroke:#181818;stroke-width:.5"/>
+    <text font-family="sans-serif" font-size="14" textLength="98" x="333.429" y="343.533">Gérer les EDT</text>
+    <ellipse cx="385.307" cy="253.862" fill="#F1F1F1" rx="72.307" ry="16.861" style="stroke:#181818;stroke-width:.5"/>
+    <text font-family="sans-serif" font-size="14" textLength="99" x="332.807" y="257.609">S&apos;authentifier</text>
+    <g fill="#454645">
+        <circle cx="52" cy="90" style="stroke:#454645;stroke-width:1.5" r="16"/>
+        <path d="M52 110c4 0 7 0 11-4 8 0 16 8 16 16v4c0 4-4 8-8 8H33c-4 0-8-4-8-8v-4c0-8 8-16 16-16 4 4 7 4 11 4" style="stroke:#454645;stroke-width:1.5"/>
+        <text font-family="sans-serif" font-size="14" textLength="61" x="21.5" y="148.495">Étudiant</text>
+    </g>
+    <g fill="#454645">
+        <circle cx="52" cy="204" style="stroke:#454645;stroke-width:1.5" r="16"/>
+        <path d="M52 224c4 0 7 0 11-4 8 0 16 8 16 16v4c0 4-4 8-8 8H33c-4 0-8-4-8-8v-4c0-8 8-16 16-16 4 4 7 4 11 4" style="stroke:#454645;stroke-width:1.5"/>
+        <text font-family="sans-serif" font-size="14" textLength="80" x="12" y="262.495">Enseignant</text>
+    </g>
+    <g fill="#454645">
+        <circle cx="187.5" cy="42" style="stroke:#454645;stroke-width:1.5" r="16"/>
+        <path d="M187.5 62c4 0 7 0 11-4 8 0 16 8 16 16v4c0 4-4 8-8 8h-38c-4 0-8-4-8-8v-4c0-8 8-16 16-16 4 4 7 4 11 4" style="stroke:#454645;stroke-width:1.5"/>
+        <text font-family="sans-serif" font-size="14" textLength="41" x="167" y="100.495">Invité</text>
+    </g>
+    <g fill="#454645">
+        <circle cx="187.5" cy="204" style="stroke:#454645;stroke-width:1.5" r="16"/>
+        <path d="M187.5 224c4 0 7 0 11-4 8 0 16 8 16 16v4c0 4-4 8-8 8h-38c-4 0-8-4-8-8v-4c0-8 8-16 16-16 4 4 7 4 11 4" style="stroke:#454645;stroke-width:1.5"/>
+        <text font-family="sans-serif" font-size="14" textLength="48" x="163.5" y="262.495">Usager</text>
+    </g>
+    <g fill="#454645">
+        <circle cx="52" cy="318" style="stroke:#454645;stroke-width:1.5" r="16"/>
+        <path d="M52 338c4 0 7 0 11-4 8 0 16 8 16 16v4c0 4-4 8-8 8H33c-4 0-8-4-8-8v-4c0-8 8-16 16-16 4 4 7 4 11 4" style="stroke:#454645;stroke-width:1.5"/>
+        <text font-family="sans-serif" font-size="14" textLength="92" x="6" y="376.495">Gestionnaire</text>
+    </g>
+    <path d="M385.5 138.277V92.063" fill="none" style="stroke:#454645;stroke-width:1;stroke-dasharray:7,7"/>
+    <path fill="#454645" style="stroke:#454645;stroke-width:1" d="m385.5 86.83-4 9 4-4 4 4-4-9z"/>
+    <text font-family="sans-serif" font-size="13" textLength="52" x="348" y="117.067">extends</text>
+    <path d="M385.5 322.597v-46.395" fill="none" style="stroke:#454645;stroke-width:1;stroke-dasharray:7,7"/>
+    <path fill="#454645" style="stroke:#454645;stroke-width:1" d="m385.5 271.084-4 9 4-4 4 4-4-9z"/>
+    <text font-family="sans-serif" font-size="13" textLength="52" x="348" y="301.567">includes</text>
+    <path d="M385.5 185.823v45.583" fill="none" style="stroke:#454645;stroke-width:1;stroke-dasharray:7,7"/>
+    <path fill="#454645" style="stroke:#454645;stroke-width:1" d="m385.5 236.696 4-9-4 4-4-4 4 9z"/>
+    <text font-family="sans-serif" font-size="13" textLength="52" x="348" y="215.817">includes</text>
+    <g fill="none">
+        <path d="m82.628 137.3 60.748 51.875M148.114 184.016l10.664 18.311-19.755-7.664 9.091-10.647z" style="stroke:#454645;stroke-width:1"/>
+    </g>
+    <g fill="none">
+        <path d="M92.332 226H138.7M138.869 219l20 7-20 7v-14z" style="stroke:#454645;stroke-width:1"/>
+    </g>
+    <path d="m216.166 216.966 103.799-33.893" fill="none" style="stroke:#454645;stroke-width:1"/>
+    <path fill="#454645" style="stroke:#454645;stroke-width:1" d="m325.109 181.393-9.797-1.007 5.044 2.56-2.56 5.044 7.313-6.597z"/>
+    <path d="m216.166 229.952 101.815 14.545" fill="none" style="stroke:#454645;stroke-width:1"/>
+    <path fill="#454645" style="stroke:#454645;stroke-width:1" d="m323.066 245.224-8.344-5.233 3.394 4.526-4.525 3.394 9.475-2.687z"/>
+    <g fill="none">
+        <path d="m98.197 301.405 45.244-38.635M139.114 257.259l19.755-7.664-10.663 18.311-9.092-10.647z" style="stroke:#454645;stroke-width:1"/>
+    </g>
+    <path d="M98.053 340h210.352" fill="none" style="stroke:#454645;stroke-width:1"/>
+    <path fill="#454645" style="stroke:#454645;stroke-width:1" d="m313.432 340-9-4 4 4-4 4 9-4z"/>
+    <path d="M216.166 64h63.644" fill="none" style="stroke:#454645;stroke-width:1"/>
+    <path fill="#454645" style="stroke:#454645;stroke-width:1" d="m284.844 64-9-4 4 4-4 4 9-4z"/>
+</svg>

@@ -28,12 +28,49 @@
 % \usepackage{lua-typo}
 %\usepackage[xindy]{imakeidx}
 %\makeindex[options= -M index -C utf8 -L french]
+\usepackage{etoolbox}
 %\usepackage[totoc]{idxlayout}
 \usepackage{varioref}
 \usepackage{nameref}
 \usepackage[unicode,naturalnames,plainpages=false,pdfencoding=auto,hidelinks]{hyperref}
 \usepackage[noabbrev,nameinlink]{cleveref} % Names references automatically. Load after hyperref.
+\usepackage{crossreftools}
 
+
+\renewcommand{\mempreaddchaptertotochook}{%
+  \addtocontents{toc}{%
+    \protect\settowidth{\protect\cftchapternumwidth}{\cftchapterfont \thechapter.\space}%
+    \protect\setlength{\protect\cftsectionindent}{\protect\cftchapternumwidth}%
+  }%
+}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\M@sect}% <cmd>
+  {\addcontentsline}% <search>
+  {\addtocontents{toc}{%
+     \protect\settowidth{\csname cft#1numwidth\endcsname}{\csname cft#1font\endcsname \csname the#1\endcsname.\space}%
+     \protect\setlength{\csname cftsub#1indent\endcsname}{\protect\dimexpr\csname cft#1numwidth\endcsname+\csname cft#1indent\endcsname}%
+   }%
+   \addcontentsline}% <replace>
+  {}{}% <success><failure>
+\makeatother
+
+%% delete boxes
+\renewcommand\numberlinebox[2]{#2} % for sections
+\renewcommand\chapternumberlinebox[2]{#2} % for chapters 
+\makeatletter
+\def\labelText{%
+  \@ifstar{\@labeltextstarred}{\@labeltext}
+}
+\newcommand{\@labeltextstarred}[2]{%
+  \crtcrossreflabel*{#1}[#2]%
+}
+
+\newcommand{\@labeltext}[2]{%
+  \crtcrossreflabel{#1}[#2]%
+}
+\makeatother
 \hypersetup{pdfprintscaling=None}
 \AtBeginDocument{\let\savedemptyset\emptyset} % 
 \AtBeginDocument{\let\emptyset\varnothing} % 
@@ -45,71 +82,70 @@
 \AtBeginDocument{\let\leq\leqslant} % 
 \AtBeginDocument{\let\geq\geqslant} %
 \newcommand{\paral}{\mathrel{\!/\mkern-5mu/\!}} % \parallel existe déjà : || vs //
+\newcommand{\scroman}[1]{\addfontfeature{SmallCapsFeatures={LetterSpace=0}}\textsc{\roman{#1}}}
 \makeatletter
-\renewcommand*{\thepart}{\@arabic\c@part}
-\renewcommand*{\thechapter}{\@Roman\c@chapter}
-\NewCommandCopy{\oldthechapter}{\thechapter}
+\renewcommand{\thechapter}{\Roman{chapter}}
 \newcommand*{\theauthor}{\@author}
 \newcommand*{\thetitle}{\@title}
 \newcommand*{\thedate}{\@date}
 \renewcommand*{\cftchapterpresnum}{\@chapapp~}
-\renewcommand{\xmapsto}[2][]{\mathrel{\mathpalette\xmapsto@{{#1}{#2}}}}
-\renewcommand{\xmapsto}[2][]{\mathrel{\mathpalette\xmapsto@{{#1}{#2}}}}
-\newcommand{\xmapsto@}[2]{\xmapsto@@{#1}#2}
-\newcommand{\xmapsto@@}[3]{%
-  \begingroup
-  \sbox\z@{$\m@th#1\mathop{}\limits_{\;#2\;}^{\;#3\;}$}%
-  \mathop{\Uhextensible width \wd\z@ 0 "27FC}_{#2}^{#3}%
-  \endgroup
-}
-\renewcommand{\xLeftrightarrow}[2][]{\mathrel{\mathpalette\xLeftrightarrow@{{#1}{#2}}}}
-\newcommand{\xLeftrightarrow@}[2]{\xLeftrightarrow@@{#1}#2}
-\newcommand{\xLeftrightarrow@@}[3]{%
-  \begingroup
-  \sbox\z@{$\m@th#1\mathop{}\limits_{\;#2\;}^{\;#3\;}$}%
-  \mathop{\Uhextensible width \wd\z@ 0 "027FA}_{#2}^{#3}% 027FA code for long left right double arrow in unicode-math-table.tex 
-  \endgroup
-}
-\renewcommand{\xrightarrow}[2][]{\mathrel{\mathpalette\xrightarrow@{{#1}{#2}}}}
-\newcommand{\xrightarrow@}[2]{\xrightarrow@@{#1}#2}
-\newcommand{\xrightarrow@@}[3]{%
-  \begingroup
-  \sbox\z@{$\m@th#1\mathop{}\limits_{\;#2\;}^{\;#3\;}$}%
-  \mathop{\Uhextensible width \wd\z@ 0 "027F6}_{#2}^{#3}% 027F6 code for long left right  arrow in unicode-math-table.tex
-  \endgroup
-}
-\AtBeginDocument{%
-  \check@mathfonts
-  \iffontchar\textfont\tw@\string"23AF
-    \renewcommand{\relbar}{\mathrel\harrowextender}%
-  \else
-    \Umathcharnumdef\std@minus\Umathcodenum`-
-  \fi}
-\newcounter{proofpart}
-\newcommand{\proofpart}{\@ifstar{\@proofpart}{\@@proofpart}}
-
-\newcommand{\@proofpart}[1]{%
-  \if\detokenize{#1}\relax\else{
-  \par
-  \addvspace{\medskipamount}%
-  \noindent \itshape%
-  {#1~:\par\nobreak\smallskip}%
-  \normalfont
-  \@afterheading
-}\fi
-}
-
-\newcommand{\@@proofpart}[1]{%
-  \par
-  \addvspace{\medskipamount}%
-  \stepcounter{proofpart}%
-  \noindent Partie \theproofpart~:~\itshape%
-  \if\detokenize{#1}\relax%
-  \else{#1.}\fi%
-  \par\nobreak\smallskip
-  \normalfont
-  \@afterheading
-}
+% \renewcommand{\xmapsto}[2][]{\mathrel{\mathpalette\xmapsto@{{#1}{#2}}}}
+% \renewcommand{\xmapsto}[2][]{\mathrel{\mathpalette\xmapsto@{{#1}{#2}}}}
+% \newcommand{\xmapsto@}[2]{\xmapsto@@{#1}#2}
+% \newcommand{\xmapsto@@}[3]{%
+%   \begingroup
+%   \sbox\z@{$\m@th#1\mathop{}\limits_{\;#2\;}^{\;#3\;}$}%
+%   \mathop{\Uhextensible width \wd\z@ 0 "27FC}_{#2}^{#3}%
+%   \endgroup
+% }
+% \renewcommand{\xLeftrightarrow}[2][]{\mathrel{\mathpalette\xLeftrightarrow@{{#1}{#2}}}}
+% \newcommand{\xLeftrightarrow@}[2]{\xLeftrightarrow@@{#1}#2}
+% \newcommand{\xLeftrightarrow@@}[3]{%
+%   \begingroup
+%   \sbox\z@{$\m@th#1\mathop{}\limits_{\;#2\;}^{\;#3\;}$}%
+%   \mathop{\Uhextensible width \wd\z@ 0 "027FA}_{#2}^{#3}% 027FA code for long left right double arrow in unicode-math-table.tex
+%   \endgroup
+% }
+% \renewcommand{\xrightarrow}[2][]{\mathrel{\mathpalette\xrightarrow@{{#1}{#2}}}}
+% \newcommand{\xrightarrow@}[2]{\xrightarrow@@{#1}#2}
+% \newcommand{\xrightarrow@@}[3]{%
+%   \begingroup
+%   \sbox\z@{$\m@th#1\mathop{}\limits_{\;#2\;}^{\;#3\;}$}%
+%   \mathop{\Uhextensible width \wd\z@ 0 "027F6}_{#2}^{#3}% 027F6 code for long left right  arrow in unicode-math-table.tex
+%   \endgroup
+% }
+% \AtBeginDocument{%
+%   \check@mathfonts
+%   \iffontchar\textfont\tw@\string"23AF
+%     \renewcommand{\relbar}{\mathrel\harrowextender}%
+%   \else
+%     \Umathcharnumdef\std@minus\Umathcodenum`-
+%   \fi}
+% \newcounter{proofpart}
+% \newcommand{\proofpart}{\@ifstar{\@proofpart}{\@@proofpart}}
+% 
+% \newcommand{\@proofpart}[1]{%
+%   \if\detokenize{#1}\relax\else{
+%   \par
+%   \addvspace{\medskipamount}%
+%   \noindent \itshape%
+%   {#1~:\par\nobreak\smallskip}%
+%   \normalfont
+%   \@afterheading
+% }\fi
+% }
+% 
+% \newcommand{\@@proofpart}[1]{%
+%   \par
+%   \addvspace{\medskipamount}%
+%   \stepcounter{proofpart}%
+%   \noindent Partie \theproofpart~:~\itshape%
+%   \if\detokenize{#1}\relax%
+%   \else{#1.}\fi%
+%   \par\nobreak\smallskip
+%   \normalfont
+%   \@afterheading
+% }
 \AtBeginDocument{% placeins code for [section] adapted for subsection.
   \expandafter\renewcommand\expandafter\subsection\expandafter
     {\expandafter\@fb@secFB\subsection}%
@@ -119,7 +155,7 @@
   \gdef\@fb@afterHHook{}%
 }
 \makeatother
-\newcommand{\scroman}[1]{\addfontfeature{SmallCapsFeatures={LetterSpace=0}}\textsc{\roman{#1}}}
+
 % 2 lignes pour localiser les overfull hbox et vbox dans le log
 \showboxdepth=\maxdimen
 \showboxbreadth=\maxdimen

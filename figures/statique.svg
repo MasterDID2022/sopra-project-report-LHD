@@ -1,25 +1,114 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="187px" preserveAspectRatio="none" style="width:393px;height:187px;background:#FFFFFF;" version="1.1" viewBox="0 0 393 187" width="393px" zoomAndPan="magnify"><defs/><g><!--MD5=[3df730ccdafe169e8e9d34344780ad50]
-entity HyperPlanning--><g id="elem_HyperPlanning"><path d="M122,141.5 L239,141.5 A3.75,3.75 0 0 1 241.5,144 L248.5,163.7969 L263,163.7969 A2.5,2.5 0 0 1 265.5,166.2969 L265.5,178.2969 A2.5,2.5 0 0 1 263,180.7969 L122,180.7969 A2.5,2.5 0 0 1 119.5,178.2969 L119.5,144 A2.5,2.5 0 0 1 122,141.5 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="119.5" x2="248.5" y1="163.7969" y2="163.7969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="129.5" y="157.4951">HyperPlanning</text></g><!--MD5=[e8ef53871a935dc9c7bb89678d8a5eb1]
-entity Etudiant--><g id="elem_Etudiant"><ellipse cx="36.5" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M36.5,22 L36.5,49 M23.5,30 L49.5,30 M36.5,49 L23.5,64 M36.5,49 L49.5,64 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="6" y="78.4951">Etudiant</text></g><!--MD5=[16b15d6cd6ee62b11a1c3dc9200ccdf6]
-entity Enseignant--><g id="elem_Enseignant"><ellipse cx="142.5" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M142.5,22 L142.5,49 M129.5,30 L155.5,30 M142.5,49 L129.5,64 M142.5,49 L155.5,64 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="102.5" y="78.4951">Enseignant</text></g><!--MD5=[dcd73ea5c955677a2db47dc91b7ee98e]
-entity Invitéé--><g id="elem_Invitéé"><ellipse cx="242.5" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M242.5,22 L242.5,49 M229.5,30 L255.5,30 M242.5,49 L229.5,64 M242.5,49 L255.5,64 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="217.5" y="78.4951">Invitéé</text></g><!--MD5=[faf7727fd04d6f8e9f5d233ac390292f]
-entity Gestionaire--><g id="elem_Gestionaire"><ellipse cx="344.5" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M344.5,22 L344.5,49 M331.5,30 L357.5,30 M344.5,49 L331.5,64 M344.5,49 L357.5,64 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="303" y="78.4951">Gestionaire</text></g><!--MD5=[d7ed2625a427b1bd7ecb456a4690edad]
-link Etudiant to HyperPlanning--><g id="link_Etudiant_HyperPlanning"><path d="M67.1295,68.315 C72.8793,72.728 78.8566,77.275 84.5,81.5 C112.334,102.337 144.629,125.7064 166.601,141.4868 " fill="none" id="Etudiant-HyperPlanning" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[2c8db04c560060fe3a55be7ca9d40ce4]
-link Enseignant to HyperPlanning--><g id="link_Enseignant_HyperPlanning"><path d="M158.596,81.6807 C167.217,101.5964 177.464,125.2663 184.419,141.3326 " fill="none" id="Enseignant-HyperPlanning" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[b516176a2a297cd3495f766175f7a6e5]
-link Invitéé to HyperPlanning--><g id="link_Invitéé_HyperPlanning"><path d="M226.404,81.6807 C217.783,101.5964 207.536,125.2663 200.581,141.3326 " fill="none" id="Invitéé-HyperPlanning" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[d737fa0fe8275439aae9a9d34187f4e5]
-link Gestionaire to HyperPlanning--><g id="link_Gestionaire_HyperPlanning"><path d="M302.965,76.061 C275.365,97.0335 240.071,123.8526 216.9,141.4589 " fill="none" id="Gestionaire-HyperPlanning" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[b42950adeb25df3dcb3131c919f7db4f]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="189px" preserveAspectRatio="none" style="width:400px;height:189px;background:#FFFFFF;" version="1.1" viewBox="0 0 400 189" width="400px" zoomAndPan="magnify"><defs/><g><!--MD5=[3df730ccdafe169e8e9d34344780ad50]
+entity HyperPlanning--><g id="elem_HyperPlanning"><path d="M125,143.5 L240,143.5 A5.25,5.25 0 0 1 243.5,147 L250.5,165.7969 L264,165.7969 A3.5,3.5 0 0 1 267.5,169.2969 L267.5,179.2969 A3.5,3.5 0 0 1 264,182.7969 L125,182.7969 A3.5,3.5 0 0 1 121.5,179.2969 L121.5,147 A3.5,3.5 0 0 1 125,143.5 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="121.5" x2="250.5" y1="165.7969" y2="165.7969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="131.5" y="159.4951">HyperPlanning</text></g><!--MD5=[79deebc7247fdafff41f05a812296516]
+entity Étudiant--><g id="elem_Étudiant"><ellipse cx="36.5" cy="22" fill="#454645" rx="16" ry="16" style="stroke:#454645;stroke-width:1.5;"/><path d="M36.5,42 C40.5,42 43.5,42 47.5,38 C55.5,38 63.5,46 63.5,54 L63.5,58 C63.5,62 59.5,66 55.5,66 L17.5,66 C13.5,66 9.5,62 9.5,58 L9.5,54 C9.5,46 17.5,38 25.5,38 C29.5,42 32.5,42 36.5,42 " fill="#454645" style="stroke:#454645;stroke-width:1.5;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="6" y="80.4951">Étudiant</text></g><!--MD5=[16b15d6cd6ee62b11a1c3dc9200ccdf6]
+entity Enseignant--><g id="elem_Enseignant"><ellipse cx="142.5" cy="22" fill="#454645" rx="16" ry="16" style="stroke:#454645;stroke-width:1.5;"/><path d="M142.5,42 C146.5,42 149.5,42 153.5,38 C161.5,38 169.5,46 169.5,54 L169.5,58 C169.5,62 165.5,66 161.5,66 L123.5,66 C119.5,66 115.5,62 115.5,58 L115.5,54 C115.5,46 123.5,38 131.5,38 C135.5,42 138.5,42 142.5,42 " fill="#454645" style="stroke:#454645;stroke-width:1.5;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="102.5" y="80.4951">Enseignant</text></g><!--MD5=[70ba2aca7e2795cb2543861b56d8b4f1]
+entity Invité--><g id="elem_Invité"><ellipse cx="246.5" cy="22" fill="#454645" rx="16" ry="16" style="stroke:#454645;stroke-width:1.5;"/><path d="M246.5,42 C250.5,42 253.5,42 257.5,38 C265.5,38 273.5,46 273.5,54 L273.5,58 C273.5,62 269.5,66 265.5,66 L227.5,66 C223.5,66 219.5,62 219.5,58 L219.5,54 C219.5,46 227.5,38 235.5,38 C239.5,42 242.5,42 246.5,42 " fill="#454645" style="stroke:#454645;stroke-width:1.5;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="226" y="80.4951">Invité</text></g><!--MD5=[faf7727fd04d6f8e9f5d233ac390292f]
+entity Gestionaire--><g id="elem_Gestionaire"><ellipse cx="351.5" cy="22" fill="#454645" rx="16" ry="16" style="stroke:#454645;stroke-width:1.5;"/><path d="M351.5,42 C355.5,42 358.5,42 362.5,38 C370.5,38 378.5,46 378.5,54 L378.5,58 C378.5,62 374.5,66 370.5,66 L332.5,66 C328.5,66 324.5,62 324.5,58 L324.5,54 C324.5,46 332.5,38 340.5,38 C344.5,42 347.5,42 351.5,42 " fill="#454645" style="stroke:#454645;stroke-width:1.5;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="310" y="80.4951">Gestionaire</text></g><!--MD5=[906adacb8054f27c3efdefa2dcc9ef84]
+link Étudiant to HyperPlanning--><g id="link_Étudiant_HyperPlanning"><path d="M67.0256,69.906 C72.7855,74.485 78.7931,79.18 84.5,83.5 C112.373,104.5978 145.064,127.7291 167.522,143.3797 " fill="none" id="Étudiant-HyperPlanning" style="stroke:#454645;stroke-width:1.0;"/></g><!--MD5=[2c8db04c560060fe3a55be7ca9d40ce4]
+link Enseignant to HyperPlanning--><g id="link_Enseignant_HyperPlanning"><path d="M159.671,83.6344 C168.605,103.736 179.117,127.3886 186.238,143.4095 " fill="none" id="Enseignant-HyperPlanning" style="stroke:#454645;stroke-width:1.0;"/></g><!--MD5=[69477e77b41c37fa1ed8a8cb08000c4f]
+link Invité to HyperPlanning--><g id="link_Invité_HyperPlanning"><path d="M229.329,83.6344 C220.395,103.736 209.883,127.3886 202.762,143.4095 " fill="none" id="Invité-HyperPlanning" style="stroke:#454645;stroke-width:1.0;"/></g><!--MD5=[d737fa0fe8275439aae9a9d34187f4e5]
+link Gestionaire to HyperPlanning--><g id="link_Gestionaire_HyperPlanning"><path d="M309.839,76.047 C281.132,97.4395 243.926,125.167 219.646,143.2607 " fill="none" id="Gestionaire-HyperPlanning" style="stroke:#454645;stroke-width:1.0;"/></g><!--MD5=[8d0035bfbda6f392f66b2bcd27a2c1be]
 @startuml
-actor Etudiant
+!theme vibrant
+skinparam actorStyle awesome
+actor Étudiant
 actor Enseignant
-actor Invitéé
+actor Invité
 actor Gestionaire
 package HyperPlanning{
 
 }
-Etudiant - - HyperPlanning
+"Étudiant" - - HyperPlanning
 Enseignant - - HyperPlanning
-Invitéé - - HyperPlanning
+Invité - - HyperPlanning
+Gestionaire - - HyperPlanning
+@enduml
+
+@startuml
+skinparam BackgroundColor FFFFFF
+skinparam shadowing false
+skinparam RoundCorner 7
+skinparam ArrowColor 454645
+skinparam FontColor 454645
+skinparam SequenceLifeLineBorderColor 696969
+skinparam SequenceGroupHeaderFontColor 454645
+skinparam SequenceGroupFontColor 696969
+skinparam SequenceGroupBorderColor 696969
+skinparam SequenceGroupBorderThickness 1
+
+skinparam sequenceDivider {
+    BorderColor 454645
+    BorderThickness 1
+    FontColor 454645
+}
+
+skinparam participant {
+    BackgroundColor FF6347
+    BorderColor 454645
+    FontColor FFFFFF
+    BorderThickness 1.5
+}
+
+skinparam database {
+    BackgroundColor 00FFFF
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam entity {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam note {
+    BackgroundColor 7FFFD4
+    BorderColor 454645
+    FontColor 454645
+    BorderThickness 1.5
+}
+
+skinparam actor {
+    BackgroundColor 454645
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam boundary {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam control {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam collections {
+    BackgroundColor FF5F42
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam queue {
+    BackgroundColor FF6347
+    BorderColor 454645
+    FontColor FFF
+    BorderThickness 1.5
+}
+skinparam actorStyle awesome
+actor Étudiant
+actor Enseignant
+actor Invité
+actor Gestionaire
+package HyperPlanning{
+
+}
+"Étudiant" - - HyperPlanning
+Enseignant - - HyperPlanning
+Invité - - HyperPlanning
 Gestionaire - - HyperPlanning
 @enduml
 

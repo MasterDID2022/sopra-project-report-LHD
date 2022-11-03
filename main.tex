@@ -14,16 +14,27 @@
 \tableofcontents
 \chapter{Introduction}
 \mainmatter
-\chapter{Exigences}\label{chapExigence}
+\chapter{Exigences}\label{chap:Exigence}
 \chapter{Axe fonctionnel}
-\begin{center}
-\includesvg[width=215pt]{figures/statique.svg}
-\end{center}
-L'axe fonctionnel se concentre sur les fonctionnalités qu'offrent notre logiciel, aussi, afin de dégager les dites fonctionnalités, il est d'abord essentiel de trouver les acteurs de notre système. Il est donc pour nous naturel de commencer notre réflexion par le \bsc{diagramme de contexte statique}.
 
-Deux choses sont à noter de ce diagramme, premièrement les cardinalités sont absentes car très probablement identiques ($0..n$).
+L'axe fonctionnel se concentre sur les fonctionnalités qu'offrent notre logiciel, aussi, afin de dégager les dites fonctionnalités, il est d'abord essentiel de trouver les acteurs de notre système. Il est donc pour nous naturel de commencer notre réflexion par un \crtlnameref{fig:diagstat}.
+
+\begin{figure}[!h]
+    \centering
+\includesvg[width=0.7\columnwidth]{figures/statique.svg}
+\caption{Diagramme de contexte statique}
+    \label{fig:diagstat}
+\end{figure}
+Deux choses sont à noter de ce diagramme, premièrement les cardinalités sont absentes car très probablement identiques ($0\dots n$).
 Les acteurs secondaires sont aussi absents, en effet il nous apparaît précipité de définir nos choix d'implantations et de subir involontairement une dette technique, dans une étapes aussi précoce de la modélisation.
-\section{e}
+
+On débute l'étude par une ébauche de~\crtlnameref{fig:diaguc} : 
+\begin{figure}[!ht]
+    \centering
+\includesvg[width=0.7\columnwidth]{figures/use_case}
+\caption{Diagramme de cas d'usage}
+    \label{fig:diaguc}
+\end{figure}
 \chapter{Axe statique}\label{chapStatique}
 \section{f}
 \section{g}
@@ -33,16 +44,18 @@ Les acteurs secondaires sont aussi absents, en effet il nous apparaît précipit
 \chapter{Implantation}\label{chapImplantation}
 \section{BDD}
 \chapter{Gestion de projet}\label{chapGestProjet}
-Le projet a été réalisé en suivant une méthode type agile. Elle fonctionne par incréments 
+Le projet a été réalisé en suivant une méthode scrum, de type agile. Elle fonctionne par incréments 
 \section{Chronologie}
-\subsection{Itération 0}
-La première itération, avait trois objectifs:
-\begin{itemize}[label=\ding{51}]
-    \item Choisir et mettre en place l'environnement de travaille \LaTeX, le choix du workflow git avec github action et enfin la mise en place des outils de communication.
-    \item la définition des acteurs primaire de notre système, avec des interview pour mieux les comprendre.
-    \item une veille d'information sur les solution déjà existante.
-\end{itemize}
-
+\begin{enumerate}[label=\textbf{Itération~n\kern-0.5bp\textsuperscript{o}~\arabic*:},start=0]
+    %iteration 0
+    \item La première itération, avait trois objectifs:
+    \begin{enumerate}
+    %j'insiste sur le ding sur chaque ligne, nous ne réussiront pas toujours nos objectifs...
+        \item [\ding{51}]Choisir et mettre en place l'environnement de travail \LaTeX, le choix du workflow \texttt{git} avec github~actions et enfin la mise en place des outils de communication.
+        \item [\ding{51}]Définir des acteurs principaux de notre système, et interviews pour mieux les comprendre.
+        \item [\ding{51}]Établir une veille d'information sur les solution déjà existantes.
+    \end{enumerate}
+\end{enumerate}
 \section{e}
 \section{f}
 \section{g}
@@ -50,6 +63,7 @@ La première itération, avait trois objectifs:
 \appendix
 
 \backmatter
+\listoffigures
 \end{document}
 %%% Local Variables:
 %%% mode: latex
