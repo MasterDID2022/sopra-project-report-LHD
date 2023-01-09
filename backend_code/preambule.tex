@@ -24,9 +24,12 @@
 \usepackage{placeins}
 \usepackage{lualatex-math}
 \usepackage{graphicx}
+\usepackage{wrapfig}
 \usepackage{svg}
 % \usepackage{lua-typo}
-%\usepackage[xindy]{imakeidx}
+\usepackage[xindy]{glossaries}
+    \makeglossaries
+    \input{dico}
 %\makeindex[options= -M index -C utf8 -L french]
 \usepackage{etoolbox}
 %\usepackage[totoc]{idxlayout}
@@ -49,7 +52,7 @@
 \patchcmd{\M@sect}% <cmd>
   {\addcontentsline}% <search>
   {\addtocontents{toc}{%
-     \protect\settowidth{\csname cft#1numwidth\endcsname}{\csname cft#1font\endcsname \csname the#1\endcsname.\space}%
+     \protect\settowidth{\csname cft#1numwidth\endcsname}{\csname cft#1font\endcsname \csname the#1\endcsname \csname cft#1dotsep\endcsname~}%
      \protect\setlength{\csname cftsub#1indent\endcsname}{\protect\dimexpr\csname cft#1numwidth\endcsname+\csname cft#1indent\endcsname}%
    }%
    \addcontentsline}% <replace>
@@ -179,3 +182,5 @@
     \renewcommand*{\thepage}{\texorpdfstring{\scroman{page}}{\roman{page}}}
   	\addtocontents{toc}{\protect\renewcommand\protect\cftchapterpresnum{\appendixname~}}
   }%%
+
+\usepackage[table,xcdraw]{xcolor}
